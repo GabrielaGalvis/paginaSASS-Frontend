@@ -1,0 +1,23 @@
+@mixin estructuraBasica($tamanoLetra, $color, $grosorLetra) {
+    font-size: $tamanoLetra;
+    color: $color;
+    font-weight: $grosorLetra;
+}
+
+@mixin barraAzul($ancho, $alto) {
+    content: '';
+    background: #03faee;
+    width: $ancho;
+    height: $alto;
+    position: absolute;
+    z-index: -1;
+}
+
+@mixin spinners($width, $height, $background-color, $position) {
+    width: $width;
+    height: $height;
+    background-color: $background-color;
+    position: $position;
+
+
+}

@@ -1,0 +1,169 @@
+@import "reset";
+@import "colores";
+@import "tipografia";
+@import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: $letraBody;
+    padding: 30px 200px;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            @include estructuraBasica(32px, #000, 700);
+        }
+
+        .menuHeader {
+
+            ul {
+                display: flex;
+                gap: 25px;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        padding: 80px 0px;
+
+        .parte1Main {
+            display: flex;
+            justify-content: space-between;
+
+            .parte1Seccion1 {
+                width: 550px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    font-family: $letraH2;
+                    @include estructuraBasica(55px, #000, 100);
+                    line-height: 70px;
+                    letter-spacing: 10px;
+                    position: relative;
+                    z-index: 10;
+                }
+
+                h2::before {
+                    @include barraAzul(215px, 40px);
+                }
+
+                p {
+                    line-height: 30px;
+                    color: $color-primary;
+                }
+
+                div {
+                    width: 195px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    button {
+                        background-color: $bg-primary;
+                        padding: 15px 20px;
+                        border: #000 1px dotted;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            img {
+                width: 450px;
+            }
+        }
+
+        .parte2Main {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 45px;
+
+            article {
+                background-color: $bg-secondary;
+                height: 220px;
+                width: 350px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding-left: 10px;
+
+                .spinner1,
+                .spinnerExterior {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+
+                .spinner1 {
+                    @include spinners(35px, 35px, $bg-secondary, absolute);
+                    right: 0px;
+                    border: 1px #000 solid;
+                }
+
+                .spinnerExterior {
+                    @include spinners(38px, 38px, $bg-primary, relative);
+                    margin-top: 5px;
+                }
+
+                h3 {
+                    position: relative;
+                    z-index: 10;
+                }
+
+                h3::before {
+                    @include barraAzul(20px, 10px);
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .copy {
+            width: 10px;
+        }
+
+        .parte2Footer {
+            display: flex;
+            gap: 20px;
+
+            .spinnerRedes,
+            .spinnerExterior {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            .spinnerRedes {
+                @include spinners(35px, 35px, $bg-secondary, absolute);
+                right: 0px;
+
+                img {
+                    width: 15px;
+                }
+            }
+
+            .spinnerExterior {
+                @include spinners(38px, 38px, $bg-primary, relative);
+                margin-top: 5px;
+            }
+        }
+
+    }
+
+}
